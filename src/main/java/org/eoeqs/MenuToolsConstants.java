@@ -1,6 +1,6 @@
 package org.eoeqs;
 
-public class TestConstants {
+public class MenuToolsConstants {
     public static final String BASE_URL = "https://fastpic.org/";
     public static final String MAIN_TITLE = "FastPic — Загрузить изображения";
     public static final String MAIN_URL = "https://fastpic.org/";

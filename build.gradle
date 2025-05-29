@@ -10,7 +10,7 @@ repositories {
 }
 
 dependencies {
-    implementation('org.seleniumhq.selenium:selenium-java:4.18.1')
+    implementation('org.seleniumhq.selenium:selenium-java:4.25.0')
     implementation('io.github.bonigarcia:webdrivermanager:6.1.0')
     testImplementation('org.assertj:assertj-core:3.24.2')
     testImplementation('org.slf4j:slf4j-simple:2.0.7')
