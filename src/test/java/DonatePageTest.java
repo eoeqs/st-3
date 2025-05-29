@@ -1,7 +1,7 @@
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.eoeqs.DonatePage;
-import org.eoeqs.DonatePageConstants;
+import org.eoeqs.TestConstants;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -50,14 +50,14 @@ public class DonatePageTest {
     }
 
     private void openBaseUrl() {
-        driver.get(DonatePageConstants.DONATE_URL);
+        driver.get(TestConstants.DONATE_URL);
         donatePage = new DonatePage(driver);
     }
 
     private void waitForPageLoad() {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-        wait.until(ExpectedConditions.titleIs(DonatePageConstants.DONATE_TITLE));
-        assertEquals(DonatePageConstants.DONATE_TITLE, driver.getTitle(), "Page title does not match expected: " + DonatePageConstants.DONATE_TITLE);
+        wait.until(ExpectedConditions.titleIs(TestConstants.DONATE_TITLE));
+        assertEquals(TestConstants.DONATE_TITLE, driver.getTitle(), "Page title does not match expected: " + TestConstants.DONATE_TITLE);
     }
 
     private void clickAndVerifyClipboard(WebElement button, String expectedWallet) throws IOException, UnsupportedFlavorException {
@@ -77,7 +77,7 @@ public class DonatePageTest {
         openBaseUrl();
         waitForPageLoad();
         for (int i = 0; i < donatePage.getCopyButtons().size(); i++) {
-            clickAndVerifyClipboard(donatePage.getCopyButtons().get(i), DonatePageConstants.WALLET_ADDRESSES[i]);
+            clickAndVerifyClipboard(donatePage.getCopyButtons().get(i), TestConstants.WALLET_ADDRESSES[i]);
         }
     }
 }

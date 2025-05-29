@@ -1,6 +1,6 @@
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.eoeqs.MenuToolsConstants;
+import org.eoeqs.TestConstants;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -44,7 +44,7 @@ public class MenuToolsTest {
     }
 
     private void openBaseUrl() {
-        driver.get(MenuToolsConstants.BASE_URL);
+        driver.get(TestConstants.BASE_URL);
         menuTools = new MenuTools(driver);
     }
 
@@ -67,7 +67,7 @@ public class MenuToolsTest {
     public void testMainPage(String browser) {
         setupBrowser(browser);
         openBaseUrl();
-        waitForPageLoad(MenuToolsConstants.MAIN_TITLE);
+        waitForPageLoad(TestConstants.MAIN_TITLE);
     }
 
     @ParameterizedTest
@@ -76,8 +76,8 @@ public class MenuToolsTest {
     public void testMainLink(String browser) {
         setupBrowser(browser);
         openBaseUrl();
-        waitForPageLoad(MenuToolsConstants.MAIN_TITLE);
-        clickAndVerifyUrl(menuTools.mainLink, MenuToolsConstants.MAIN_URL);
+        waitForPageLoad(TestConstants.MAIN_TITLE);
+        clickAndVerifyUrl(menuTools.getMainLink(), TestConstants.BASE_URL);
     }
 
     @ParameterizedTest
@@ -86,8 +86,8 @@ public class MenuToolsTest {
     public void testRulesLink(String browser) {
         setupBrowser(browser);
         openBaseUrl();
-        waitForPageLoad(MenuToolsConstants.MAIN_TITLE);
-        clickAndVerifyUrl(menuTools.rulesLink, MenuToolsConstants.RULES_URL);
+        waitForPageLoad(TestConstants.MAIN_TITLE);
+        clickAndVerifyUrl(menuTools.getRulesLink(), TestConstants.RULES_URL);
     }
 
     @ParameterizedTest
@@ -96,8 +96,8 @@ public class MenuToolsTest {
     public void testFaqLink(String browser) {
         setupBrowser(browser);
         openBaseUrl();
-        waitForPageLoad(MenuToolsConstants.MAIN_TITLE);
-        clickAndVerifyUrl(menuTools.faqLink, MenuToolsConstants.FAQ_URL);
+        waitForPageLoad(TestConstants.MAIN_TITLE);
+        clickAndVerifyUrl(menuTools.getFaqLink(), TestConstants.FAQ_URL);
     }
 
     @ParameterizedTest
@@ -106,8 +106,8 @@ public class MenuToolsTest {
     public void testUploaderLink(String browser) {
         setupBrowser(browser);
         openBaseUrl();
-        waitForPageLoad(MenuToolsConstants.MAIN_TITLE);
-        clickAndVerifyUrl(menuTools.uploaderLink, MenuToolsConstants.UPLOADER_URL);
+        waitForPageLoad(TestConstants.MAIN_TITLE);
+        clickAndVerifyUrl(menuTools.getUploaderLink(), TestConstants.UPLOADER_URL);
     }
 
     @ParameterizedTest
@@ -116,8 +116,8 @@ public class MenuToolsTest {
     public void testMyLoadingLink(String browser) {
         setupBrowser(browser);
         openBaseUrl();
-        waitForPageLoad(MenuToolsConstants.MAIN_TITLE);
-        clickAndVerifyUrl(menuTools.myLoadingLink, MenuToolsConstants.MY_LOADING_URL);
+        waitForPageLoad(TestConstants.MAIN_TITLE);
+        clickAndVerifyUrl(menuTools.getMyLoadingLink(), TestConstants.MY_LOADING_URL);
     }
 
     @ParameterizedTest
@@ -126,7 +126,7 @@ public class MenuToolsTest {
     public void testDonateLink(String browser) {
         setupBrowser(browser);
         openBaseUrl();
-        waitForPageLoad(MenuToolsConstants.MAIN_TITLE);
-        clickAndVerifyUrl(menuTools.donateLink, MenuToolsConstants.DONATE_URL);
+        waitForPageLoad(TestConstants.MAIN_TITLE);
+        clickAndVerifyUrl(menuTools.getDonateLink(), TestConstants.DONATE_URL);
     }
 }
